@@ -1,0 +1,491 @@
+<html class="lang-en-us" lang="en-US">
+
+<head>
+    <title>Just a moment...</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta content="noindex,nofollow" name="robots" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            color: #313131
+        }
+
+        button,
+        html {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji
+        }
+
+        @media (prefers-color-scheme:dark) {
+            body {
+                background-color: #222;
+                color: #d9d9d9
+            }
+
+            body a {
+                color: #fff
+            }
+
+            body a:hover {
+                color: #ee730a;
+                text-decoration: underline
+            }
+
+            body .lds-ring div {
+                border-color: #999 transparent transparent
+            }
+
+            body .font-red {
+                color: #b20f03
+            }
+
+            body .pow-button {
+                background-color: #4693ff;
+                color: #1d1d1d
+            }
+
+            body #challenge-success-text {
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI2IDI2Ij48cGF0aCBmaWxsPSIjZDlkOWQ5IiBkPSJNMTMgMGExMyAxMyAwIDEgMCAwIDI2IDEzIDEzIDAgMCAwIDAtMjZtMCAyNGExMSAxMSAwIDEgMSAwLTIyIDExIDExIDAgMCAxIDAgMjIiLz48cGF0aCBmaWxsPSIjZDlkOWQ5IiBkPSJtMTAuOTU1IDE2LjA1NS0zLjk1LTQuMTI1LTEuNDQ1IDEuMzg1IDUuMzcgNS42MSA5LjQ5NS05LjYtMS40Mi0xLjQwNXoiLz48L3N2Zz4=)
+            }
+
+            body #challenge-error-text {
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+)
+            }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh
+        }
+
+        body.no-js .loading-spinner {
+            visibility: hidden
+        }
+
+        body.no-js .challenge-running {
+            display: none
+        }
+
+        body.dark {
+            background-color: #222;
+            color: #d9d9d9
+        }
+
+        body.dark a {
+            color: #fff
+        }
+
+        body.dark a:hover {
+            color: #ee730a;
+            text-decoration: underline
+        }
+
+        body.dark .lds-ring div {
+            border-color: #999 transparent transparent
+        }
+
+        body.dark .font-red {
+            color: #b20f03
+        }
+
+        body.dark .pow-button {
+            background-color: #4693ff;
+            color: #1d1d1d
+        }
+
+        body.dark #challenge-success-text {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI2IDI2Ij48cGF0aCBmaWxsPSIjZDlkOWQ5IiBkPSJNMTMgMGExMyAxMyAwIDEgMCAwIDI2IDEzIDEzIDAgMCAwIDAtMjZtMCAyNGExMSAxMSAwIDEgMSAwLTIyIDExIDExIDAgMCAxIDAgMjIiLz48cGF0aCBmaWxsPSIjZDlkOWQ5IiBkPSJtMTAuOTU1IDE2LjA1NS0zLjk1LTQuMTI1LTEuNDQ1IDEuMzg1IDUuMzcgNS42MSA5LjQ5NS05LjYtMS40Mi0xLjQwNXoiLz48L3N2Zz4=)
+        }
+
+        body.dark #challenge-error-text {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+)
+        }
+
+        body.light {
+            background-color: transparent;
+            color: #313131
+        }
+
+        body.light a {
+            color: #0051c3
+        }
+
+        body.light a:hover {
+            color: #ee730a;
+            text-decoration: underline
+        }
+
+        body.light .lds-ring div {
+            border-color: #595959 transparent transparent
+        }
+
+        body.light .font-red {
+            color: #fc574a
+        }
+
+        body.light .pow-button {
+            background-color: #003681;
+            border-color: #003681;
+            color: #fff
+        }
+
+        body.light #challenge-success-text {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI2IDI2Ij48cGF0aCBmaWxsPSIjMzEzMTMxIiBkPSJNMTMgMGExMyAxMyAwIDEgMCAwIDI2IDEzIDEzIDAgMCAwIDAtMjZtMCAyNGExMSAxMSAwIDEgMSAwLTIyIDExIDExIDAgMCAxIDAgMjIiLz48cGF0aCBmaWxsPSIjMzEzMTMxIiBkPSJtMTAuOTU1IDE2LjA1NS0zLjk1LTQuMTI1LTEuNDQ1IDEuMzg1IDUuMzcgNS42MSA5LjQ5NS05LjYtMS40Mi0xLjQwNXoiLz48L3N2Zz4=)
+        }
+
+        body.light #challenge-error-text {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI2ZjNTc0YSIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjZmM1NzRhIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+)
+        }
+
+        a {
+            background-color: transparent;
+            color: #0051c3;
+            text-decoration: none;
+            transition: color .15s ease
+        }
+
+        a:hover {
+            color: #ee730a;
+            text-decoration: underline
+        }
+
+        .main-content {
+            margin: 8rem auto;
+            max-width: 60rem;
+            width: 100%
+        }
+
+        .heading-favicon {
+            height: 2rem;
+            margin-right: .5rem;
+            width: 2rem
+        }
+
+        @media (width <=720px) {
+            .main-content {
+                margin-top: 4rem
+            }
+
+            .heading-favicon {
+                height: 1.5rem;
+                width: 1.5rem
+            }
+        }
+
+        .footer,
+        .main-content {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .main-wrapper {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            flex-direction: column
+        }
+
+        .font-red {
+            color: #b20f03
+        }
+
+        .spacer {
+            margin: 2rem 0
+        }
+
+        .h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 3.75rem
+        }
+
+        .h2 {
+            font-weight: 500
+        }
+
+        .core-msg,
+        .h2 {
+            font-size: 1.5rem;
+            line-height: 2.25rem
+        }
+
+        .body-text,
+        .core-msg {
+            font-weight: 400
+        }
+
+        .body-text {
+            font-size: 1rem;
+            line-height: 1.25rem
+        }
+
+        @media (width <=720px) {
+            .h1 {
+                font-size: 1.5rem;
+                line-height: 1.75rem
+            }
+
+            .h2 {
+                font-size: 1.25rem
+            }
+
+            .core-msg,
+            .h2 {
+                line-height: 1.5rem
+            }
+
+            .core-msg {
+                font-size: 1rem
+            }
+        }
+
+        #challenge-error-text {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI2ZjNTc0YSIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjZmM1NzRhIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+);
+            padding-left: 34px
+        }
+
+        #challenge-error-text,
+        #challenge-success-text {
+            background-repeat: no-repeat;
+            background-size: contain
+        }
+
+        #challenge-success-text {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI2IDI2Ij48cGF0aCBmaWxsPSIjMzEzMTMxIiBkPSJNMTMgMGExMyAxMyAwIDEgMCAwIDI2IDEzIDEzIDAgMCAwIDAtMjZtMCAyNGExMSAxMSAwIDEgMSAwLTIyIDExIDExIDAgMCAxIDAgMjIiLz48cGF0aCBmaWxsPSIjMzEzMTMxIiBkPSJtMTAuOTU1IDE2LjA1NS0zLjk1LTQuMTI1LTEuNDQ1IDEuMzg1IDUuMzcgNS42MSA5LjQ5NS05LjYtMS40Mi0xLjQwNXoiLz48L3N2Zz4=);
+            padding-left: 42px
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .pow-button {
+            background-color: #0051c3;
+            border: .063rem solid #0051c3;
+            border-radius: .313rem;
+            color: #fff;
+            font-size: .875rem;
+            line-height: 1.313rem;
+            margin: 2rem 0;
+            padding: .375rem 1rem;
+            transition-duration: .2s;
+            transition-property: background-color, border-color, color;
+            transition-timing-function: ease
+        }
+
+        .pow-button:hover {
+            background-color: #003681;
+            border-color: #003681;
+            color: #fff;
+            cursor: pointer
+        }
+
+        .footer {
+            font-size: .75rem;
+            line-height: 1.125rem;
+            margin: 0 auto;
+            max-width: 60rem;
+            width: 100%
+        }
+
+        .footer-inner {
+            border-top: 1px solid #d9d9d9;
+            padding-bottom: 1rem;
+            padding-top: 1rem
+        }
+
+        .clearfix:after {
+            clear: both;
+            content: "";
+            display: table
+        }
+
+        .clearfix .column {
+            float: left;
+            padding-right: 1.5rem;
+            width: 50%
+        }
+
+        .diagnostic-wrapper {
+            margin-bottom: .5rem
+        }
+
+        .footer .ray-id {
+            text-align: center
+        }
+
+        .footer .ray-id code {
+            font-family: monaco, courier, monospace
+        }
+
+        .core-msg,
+        .zone-name-title {
+            overflow-wrap: break-word
+        }
+
+        @media (width <=720px) {
+            .diagnostic-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center
+            }
+
+            .clearfix:after {
+                clear: none;
+                content: none;
+                display: initial;
+                text-align: center
+            }
+
+            .column {
+                padding-bottom: 2rem
+            }
+
+            .clearfix .column {
+                float: none;
+                padding: 0;
+                width: auto;
+                word-break: keep-all
+            }
+
+            .zone-name-title {
+                margin-bottom: 1rem
+            }
+        }
+
+        .loading-spinner {
+            height: 76.391px
+        }
+
+        .lds-ring {
+            display: inline-block;
+            position: relative
+        }
+
+        .lds-ring,
+        .lds-ring div {
+            height: 1.875rem;
+            width: 1.875rem
+        }
+
+        .lds-ring div {
+            animation: lds-ring 1.2s cubic-bezier(.5, 0, .5, 1) infinite;
+            border: .3rem solid transparent;
+            border-radius: 50%;
+            border-top-color: #313131;
+            box-sizing: border-box;
+            display: block;
+            position: absolute
+        }
+
+        .lds-ring div:first-child {
+            animation-delay: -.45s
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -.3s
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -.15s
+        }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0)
+            }
+
+            to {
+                transform: rotate(1turn)
+            }
+        }
+
+        @media screen and (-ms-high-contrast:active),
+        screen and (-ms-high-contrast:none) {
+
+            .main-wrapper,
+            body {
+                display: block
+            }
+        }
+
+        .rtl .heading-favicon {
+            margin-left: .5rem;
+            margin-right: 0
+        }
+
+        .rtl #challenge-success-text {
+            background-position: 100%;
+            padding-left: 0;
+            padding-right: 42px
+        }
+
+        .rtl #challenge-error-text {
+            background-position: 100%;
+            padding-left: 0;
+            padding-right: 34px
+        }
+    </style>
+    <meta content="390" http-equiv="refresh" />
+    <script src="/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=89e98cc22cb63e65"></script>
+    <script async="" crossorigin="anonymous" defer=""
+        src="https://challenges.cloudflare.com/turnstile/v0/g/d2a97f6b6ec9/api.js?onload=KHGO2&amp;render=explicit"></script>
+</head>
+
+<body class="no-js">
+    <div class="main-wrapper" role="main">
+        <div class="main-content">
+            <h1 class="zone-name-title h1">www.bangla.24livenewspaper.com</h1>
+            <h2 class="h2" id="AYJX7">Verifying you are human. This may take a few seconds.</h2>
+            <div id="qrVk5" style="display: flex;">
+                <div class="spacer" id="turnstile-wrapper">
+                    <div><iframe allow="cross-origin-isolated; fullscreen; autoplay" id="cf-chl-widget-8z6c0"
+                            sandbox="allow-same-origin allow-scripts allow-popups"
+                            src="https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv0/0/8z6c0/0x4AAAAAAADnPIDROrmt1Wwj/light/normal"
+                            style="border: none; overflow: hidden; width: 300px; height: 65px;" tabindex="0"
+                            title="Widget containing a Cloudflare security challenge"></iframe><input
+                            id="cf-chl-widget-8z6c0_response" name="cf-turnstile-response" type="hidden" /></div>
+                </div>
+            </div>
+            <div class="spacer loading-spinner" id="BIAT5" style="display: none; visibility: hidden;">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="core-msg spacer" id="DXWF6">www.bangla.24livenewspaper.com needs to review the security of your
+                connection before proceeding.</div>
+            <div id="vHcX4" style="display: none;">
+                <div class="h2" id="challenge-success-text">Verification successful</div>
+                <div class="core-msg spacer">Waiting for www.bangla.24livenewspaper.com to respond...</div>
+            </div><noscript>
+                <div id="challenge-error-title">
+                    <div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span>
+                    </div>
+                </div>
+            </noscript>
+        </div>
+    </div>
+    <script>(function () { window._cf_chl_opt = { cvId: '3', cZone: "www.bangla.24livenewspaper.com", cType: 'managed', cNounce: '19451', cRay: '89e98cc22cb63e65', cHash: '49c2f067c4d06ac', cUPMDTk: "\/science-technology?start=1&__cf_chl_tk=LSYgO9JOlQDV_qB.r3cVk8jIrOzi2HJTDY8n.XLuRXE-1720205522-0.0.1.1-3988", cFPWv: 'g', cTTimeMs: '1000', cMTimeMs: '390000', cTplV: 5, cTplB: 'cf', cK: "", fa: "\/science-technology?start=1&__cf_chl_f_tk=LSYgO9JOlQDV_qB.r3cVk8jIrOzi2HJTDY8n.XLuRXE-1720205522-0.0.1.1-3988", md: "LwP.oyG4rGiL_G4M4aHsNhWx4s.Ihp5xmABswUC8238-1720205522-1.1.1.1-cINb40B2bMJEgG1xbV1u7sAeJJ9P6gLb1qwC6KBSCM8nG_M.oibgL6UeCn30tmdDUaAeUVAPlf203SSXN35yH0tFsaGzwDiBltoh_zjgnKEXqPLtwGTECBVDy.X.NI5Rl5_fTfIUoJCYPeyi9XuPeFc.HtxrZwhV4sSAjIhJzAuG2wbF_1c7hKh4.fgEmJ.dlGnKLHS3nBGHY8x7srecTZaWxT0sqjFdbFn94dfRWfbQ5O8agNY.h69oNhl9pb1_2F1fi1rkvFdRoffLDFWrQztTq0_ZeIxntMZ1ae.1qxkLyyxQ.An0adbAbxQ8OXpaeqhfJEdtIKTBFvfFpyOgfK54m_O7b8Z3XHar37tWu1W_tCH8ZoHRZQ4bQus5ObFElOzzfvgHK_eq76fID3wvrshG44qBENAeBY1R10lgjlJemg.2uFZqpDIeZKRWZRH50AqWLsKhz3mk7sHsnYpOpFzMYQKn38ReR9ig1op_YJ2.WlzECRowur2y2j1s63u5ojqfh8XHTR_UnpvhAkYRyiAaGDr7La0lKWdJ7N_blarzQ6DFULeWlWuzfPo9ax.zXAKs2hgjRqD7O56__X5FlbbPs3_Y8TrEXNH4RBHnV87WfUO7SPlJ3vNFMO6ZpaT0QcPDnunZP1_hRDP_gsduGVQH3PZsratAbHPP_jur8RwRzsgRk4ZPu.AaPzH1uPPgrWWbgmzE4hYHXukXnqZV4kzdPYCZnhpiQ3zZXQk6czgx1PFPN9jKSX_gtHOwEtv7_BrBog1lIzxFAFRNEeE3NTASWS.KUo89az_48aj_NcdqEjbeyNqNCCpTqEbav5zzn9OXf2f8JEUqPq56vJRopu94HVhZlLD1bY9nLQt4RvxMyyPh5YkZS6lAn4prx84GnGvRFoA58e43jDUe2ruAokIuY6odGrWWDCMV4PTqJPNSktvRcMMvBnRc.pH20uiJ8.NlLdk.NDDQLfOMU_cwG13Durp.6fmjZoPavqESYWj.tRvTR.4B1h_jaH6yxPZS.ToPB5tySV2JzA5hoITiE0GB6_hhwHr7oMg7D00cLiT_flOmW2pmJFM4keGKxaixywtJxUFW0yVGYhvs.68SvIXyBKroz4yNFXGjnpcrKqusoUBtp_mc8dZS7iqAnGrWgPSQnQTBcmGHL0JA20nY51pcDxkFKcWVZJo2j0zI_yxMJRT_ZEUVx99gy0CPqn6HFMhthhTfL.jK2rqgfQvVyn8ltP8t8eiBVKMiwWWcIFC_IVZdzSc0xoteWOxzCEFXZyhUlVEyhxjpYf_cvaJNyS7LjvlVQcR.MSAxwsG9tgIi6wW9FMEye_969a6eznq.7Em8dZZSd_fd1lEgh6D6HmdWO3wotvYM9KuLJf3BrS9J.FOTgEkakSppH4Mh_GqTaLwudQek2heFzlGZcfpAb9xx8yl9hh0Pk37jmlr9mCwa7bcT6A8SQnwCqerAYdoDrJ.dLEeBu3tgjjkkxRKNRKBazcDnA6_JZqTY6dwPOeNkmkGZbVNzOej73AvhJ_X4", mdrd: "lOcP0Ts2ZDCqlPEn7Pt4.F1Lgl4kA7dpr69eiZ_Fiqk-1720205522-1.1.1.1-deYzVz5mfLDLl0tq372SnV43H8742lbLextytasw_89YYX9AuwY1W5I8O3GL0j.7qmpOp3hrhfSUa_EBFk7ShWPh1e0C4r4at38oVRl0uHL7P3.Ek11JmFjX4FkfvTdhD34tknzGwOXgDcotT0I9U0iR462oHYWdo6AoXlr1P4PjNzHaFGvzDg4EaNVzLsa39aSJwKeXQ471ashC8TqWsPin6dVkhbt.EGJ7uPg6Ugovc768VZn.oMsHyhe78yaQi69.YNuzWpHrnXO_IIF3pp5oCSe0dnme69mBAtMnVBTOCTdmtKJkWiiOmA6V0RJckZAzMAwApjfchYax6ZUfaYdOwfqjh69Ma1B211ChFNsYVMwzyNbxB2GZcOWNwGk1BBWajrZxNoUjTnPO4mtiGQc3vyO1vef3.BkK.q8DwS2ONssn6klZ_rAiM7mC481jK_i0OBh1Ug0Otr6kZkgyyKtzQ4wrpWJgzVhRs0ZkL1IBnMayOR5xfA9APiu0a9vaZ84DS65ssCTjy0YrKo4QV6TwiYJZLR3GvtPWkAkdBsA7Gi6hM8k4oi7LCkPlBMQqY3n4Y2Yl6i0bLBsLmGv0suxnscf_QdZF22iZa8zfybjueK_DzKvW1uEY9BRtFHvjC6ox_92N4tLnhWGq6LYfMaNcEyYJ5cvXAQJWnyT_rwjJy3z7ulXgAgszH0osWOYRs7nWzG0DwzVInb2fH7UUWOr2OaNM.1OaTN9beu4JKtJAiGeJM1iIbCQnypItpwhIIT.SWOJbTI6CESln_bXpdMSw_9P4EMc2wSb6bcGGCtqLr87qWY0.YnSYNmrgOWPWoULPb061x7xQJrROIqStgMqO0l7awHzA4Gkhl1cwZ4MZWbFng3ywMXk8QU13kqvcjIu7wgySnR2rVV56EWxYADLAKL.NID.TxLfOr0u9WPhgZmIx0Vc4jLmlpIh8Z7mciSJTlMHgpmRK3vRixev2J6cf.ZKBozETJSZ73.wFFra.3cuNskztklvkwCH6._8FybcjGnQaZWCj9LAAJ6isW.rStlPIbNJmQQfdRIMzYKMJlhF8KtOqFM6beiI_rSovE.orQyNs_dOPeKWG_njrSfvg1Wt79WaIX2s4Qql3r3JUOQ02hrC3clbXVX.7fMZvHhpTvf3LOVPS8JAryX0I2XgZ5288PcJWhMVmxhnMYAJd_.bp_WlJaw7K4yLWzXYLrFSB.evHN2RVHjOr_Sk49N7tyPPvcwMJmroHq7tn.Ek1l0ajl540hoRZ3kfC.k.fsaPpcB.LX1kv8VlV3kfCId_WFj3.xa3lsAYsz76Z.gUuI6WXCbQ6Q52uNvE0xRqwbgUx7RkByDP4NluE_xidlDrlBXA0NjKFbBI9MzQCUx.rgncXHdYa2xsGAEjOZ4HRMGurR36EUu1tI3ikdLjUj6GuE19Wh7eVK4oRgdqgp3iW72mOkeckFgT7tPKUmFmwM9ngIJqBv6kBkVCDcg9cCe714lyFFJFKU.mDQ0SWStCP5TJv_SS99Pf8uAuoaWYdjHZmfWMaUuEw_kc4yG0IUX56WkGW3dl7NVNKet8xuz8IiFNFVeSa9UvHOVYtum3h3AO1g.bvE7qt0DVUdNbDt1AhtaU496uRqRf.i1IDIIKFNdJGQmIR.TaT5yAU_7gcfBsUbCA3pK.OQQ3ecsWhxpokUrK3f3TJIxz7ysZCHdLPfc1Z04O8OmiD_RrUXCNOZEutZ14hNb_VqnI2_Ma5LnVt68uy38i8EMINj.E7h0_fEvVBZhUBnE0CmxeKcHn1kl95ja.5b7oJqOmBrm5IOr8qevH6bQyVFFhpCDmoXHVvD.MhG5Rj.LmF5bQGLXFNOh7frF0fnjU8IFEfvZiCUfBgrZhZcQdYLVIquSuNT1BF.3DtAKCVIG7xICDbqFsM9FJl195ZmMFWlLlrYYiQZORNMqU6ZW4VfECmoWy2kBxTuBlxRuyHI.mPYJhWLrDUy2GWwoCYulyBOazraNqJ5_EPdnYzE8Pr6WPL4Lxqd8QVQ1HSNG.WFSxZJ7XsCHIf0qx.Ntps45_6_XwL72Ac2M8DoUA3t4SePaE1TsY0JnYAHQRVCafs8_XHSD5x5DsbcfgWl0dIAKI3XFTxgYwQ7W9hBgAD7Im_nKhCtsKJZ.ySjLNzO46uPAOIWvexJgqVbv6vedsqEZlSpMAwUUe5JPKFBpRgK8zRj..Rt5uMKf56_UZbJ4p7_vuNWFxCByiN6B5kYxkL_OpYoXPoQ0PTAiv4KTZGk6KbqYUnSOus7wtS_RuE2xghsdpN5WZnDedh4.3RsP_NMEoxzF8KAP2KiQ", cRq: { ru: 'aHR0cHM6Ly93d3cuYmFuZ2xhLjI0bGl2ZW5ld3NwYXBlci5jb20vc2NpZW5jZS10ZWNobm9sb2d5P3N0YXJ0PTE=', ra: 'TW96aWxsYS81LjAgKFgxMTsgTGludXggeDg2XzY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBIZWFkbGVzc0Nocm9tZS8xMjUuMC42NDIyLjE0MSBTYWZhcmkvNTM3LjM2', rm: 'R0VU', d: 'u6K4QSMG/kV7mk9SJ8V+j3mJ2hmKsQ9/uEUWBSnSGI/vzxiNTlwQa35jRlIaMWuehS6EbSZgVkHi4//ImszMA1NDW9FfjQrPqH890iUNWXqTi0tPyZzk4V0DBRnqprm5EM6FzMZfx1W7WnIRuVeSS5ucG/71cQC823Ujl5ddzdE2s22ujYGIB6iK/ycSWEoJyyEcIfn8xsds6ysTEyl4lEf/0RU8/xtxSXWzT/RNwTApeZgygsE+1EpRmxKTQWZB45/Wh/kYhftOP4y3AncE+AV7rbU7pMaja64IpF6LElhWNag90EYXFMjiQZJLvpq47UDtGhchrtPHaHyhxzJaVa3+hIcCQATKFjLa3SMSRIIXx/+bGhc6NYTJpo8SJq2wzttXLbtcIBsCkIWYmBv7Y/pC0OVGLnQc6u1wwKIe8oE4zVBOqC1ftS4Bz8mKUNABYevn5mXWDhQH+0hr5600k8YQRLLDMUace9c9hnG+I6cJ1cyzjRbYFs2hmeigCfGzRdcUD8NDkC/24ojMFlL88w==', t: 'MTcyMDIwNTUyMi4wMDAwMDA=', cT: Math.floor(Date.now() / 1000), m: 'Ko/q07BCfS4KG5dd4KlCnkL1Av3LnZdtezyhhhKJxY0=', i1: 'NooRAD7/gK1+qt83aLaquw==', i2: '4cWmXIh3mjRpkDc6JATyrg==', zh: 'i0EbvTBWECX522zNbLNMXCn6CvNq09/FzUYK1PDPQ3E=', uh: 'Et5rNlNEZQINg000BJL+7MHGULrhfPD8Jrr9eS7nzgw=', hh: 'NglXbp1V+OqUy/nF/LEuylcJcfpkvGkPkpuLCDOgnnk=', } }; var cpo = document.createElement('script'); cpo.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=89e98cc22cb63e65'; window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash; window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search; if (window.history && window.history.replaceState) { var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash; history.replaceState(null, null, "\/science-technology?start=1&__cf_chl_rt_tk=LSYgO9JOlQDV_qB.r3cVk8jIrOzi2HJTDY8n.XLuRXE-1720205522-0.0.1.1-3988" + window._cf_chl_opt.cOgUHash); cpo.onload = function () { history.replaceState(null, null, ogU); } } document.getElementsByTagName('head')[0].appendChild(cpo); }());</script>
+    <div class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="clearfix diagnostic-wrapper">
+                <div class="ray-id">Ray ID: <code>89e98cc22cb63e65</code></div>
+            </div>
+            <div class="text-center" id="footer-text">Performance &amp; security by Cloudflare</div>
+        </div>
+    </div>
+</body>
+
+</html>

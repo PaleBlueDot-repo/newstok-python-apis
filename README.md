@@ -1,3 +1,6 @@
+# Run
+cd summarize -> python app.py
+
 summarizationGemeiApi 
 Endpoint-> POST Request
 ## For Postman

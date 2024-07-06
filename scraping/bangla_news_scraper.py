@@ -9,16 +9,16 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 newspaper_base_url = 'https://www.bangla.24livenewspaper.com/'
-max_pages_index = 10
 
 def contains_url(text):
     url = "https://www.bangla.24livenewspaper.com/post-"
     return url in text
 
-def scrape_bangla_news(topic):
+def scrape_bangla_news(topic, max_pages_index):
     output_result = []
     index = 1
-     # Setup Selenium with ChromeDriverManager
+
+    # Setup Selenium with ChromeDriverManager
     chrome_options = Options()
     # chrome_options.add_argument('--headless')  # Run headless Chrome
     chrome_options.add_argument('--no-sandbox')
@@ -27,13 +27,18 @@ def scrape_bangla_news(topic):
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
     while index<=max_pages_index:
-        url = 'https://www.bangla.24livenewspaper.com/bangladesh?start=13'
-        print("Fetching URL:", "https://www.bangla.24livenewspaper.com/bangladesh?start=13")
+        url = f'{newspaper_base_url}{topic}?start={index}'
+        print("Fetching URL:", url)
         
         driver.get(url)
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, '//h2/a'))
-        )
+        try:
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '//h2/a'))
+            )
+        except:
+            print(index)
+            index+=1
+            continue
 
         # Find all <h2> tags with class 'item-title'
         h2_tags = driver.find_elements(By.XPATH, '//h2/a')
@@ -53,6 +58,7 @@ def scrape_bangla_news(topic):
                         EC.presence_of_element_located((By.XPATH, "//div[@class='item-page']/div/p"))
                     )
                 except:
+                    print("line 57---------- not found")
                     continue
 
                 # Find the elements
@@ -69,7 +75,7 @@ def scrape_bangla_news(topic):
                 output_result.append({'title': news['title'], 'link': news['link'], 'article': article, 'published': datetimes})
 
         
-        index += 10  # Increment index to fetch the next set of articles
+        index += 1  # Increment index to fetch the next set of articles
 
     driver.quit()
     return output_result

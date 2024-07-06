@@ -1,5 +1,5 @@
 ## RUN
-cd  GenerateImages 
+cd  GenerateImages -> 
 python app.py
 
 ## API CALL -POST request

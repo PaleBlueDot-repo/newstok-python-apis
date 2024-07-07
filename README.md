@@ -8,7 +8,7 @@ pip install google-generative
 summarizationGemeiApi 
 Endpoint-> POST Request
 ## For Postman
-[http://127.0.0.1:5000/process](http://127.0.0.1:5000/ml/process-data)
+http://127.0.0.1:5000/ml/process-data
 
 
 {

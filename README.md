@@ -1,5 +1,8 @@
-english-news-scrapper
+
 # newstok-python-apis
+# bangla-news-scrapper
+http://127.0.0.1:5000/scraping/scrape_bangla_news?topic=science-technology
+# english-news-scrapper
 http://127.0.0.1:5000/scraping/scrape_english_news?topic=business-economy
 
 pip install --user Flask

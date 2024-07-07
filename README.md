@@ -26,6 +26,9 @@ pip install google
 
 pip install google-generative
 
+pip install Pillow
+
+
 
 summarizationGemeiApi 
 Endpoint-> POST Request

@@ -1,3 +1,14 @@
+## RUN
+cd  GenerateImages -> 
+python app.py
+
+## API CALL -POST request
+
+http://127.0.0.1:5000/generate-image
+{
+  "prompt": "a man walking in the fire animated"
+}
+
 
 # newstok-python-apis
 # bangla-news-scrapper
@@ -14,6 +25,9 @@ pip install webdriver_manager
 pip install google
 
 pip install google-generative
+
+pip install Pillow
+
 
 
 summarizationGemeiApi 

@@ -1,7 +1,11 @@
 import json
-from flask import Blueprint, request, jsonify
+import io
+from PIL import Image
+from flask import Blueprint, request, jsonify, request, send_file, jsonify
 from ml.summarization_gemei_api import process_text
 from ml.fake_news_detect_api import indentify_fake_news
+from ml.generate_image_api import query_huggingface_api
+
 
 
 ml_bp = Blueprint('ml_bp', __name__)
@@ -26,3 +30,22 @@ def classify_text():
     
     # Return the result as JSON
     return jsonify(result)
+  
+@ml_bp.route('/generate-image', methods=['POST'])
+def generate_image():
+    data = request.get_json()
+    if not data or 'prompt' not in data:
+        return jsonify({"error": "Invalid request, 'prompt' key is required"}), 400
+
+    prompt = data['prompt']
+    image_bytes = query_huggingface_api(prompt)
+
+    if image_bytes:
+        try:
+            # Return the image as a response
+            return send_file(io.BytesIO(image_bytes), mimetype='image/png')
+        except Exception as e:
+            return jsonify({"error": f"Error processing image: {e}"}), 500
+    else:
+        return jsonify({"error": "Failed to generate image"}), 500
+

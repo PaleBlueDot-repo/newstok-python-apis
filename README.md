@@ -46,15 +46,7 @@ Using a virtual environment helps to manage dependencies and keep your project i
 
 Once activated, your terminal will show the name of the virtual environment (e.g., `(env)`) before the prompt, indicating that you’re now working inside the virtual environment.
 
-### Installing Dependencies
 
-After activating the virtual environment, install the required packages by running:
-
-```bash
-pip install -r requirements.txt
-```
-
-This will install all the dependencies listed in the `requirements.txt` file into your virtual environment.
 
 ### Deactivating the Virtual Environment
 
@@ -73,7 +65,13 @@ This will return your terminal to its normal state, and your system-wide Python 
 ```bash
 pip install --user Flask selenium webdriver_manager google google-generative Pillow transformers tensorflow
 ```
+or 
 
+```bash
+pip install -r requirements.txt
+```
+
+This will install all the dependencies listed in the `requirements.txt` file into your virtual environment.
 
 ### Running the Application
 

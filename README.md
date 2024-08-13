@@ -136,9 +136,10 @@ The application offers endpoints for scraping news articles:
 
 * **Bangla News:**
     * **Endpoint:** `http://127.0.0.1:5000/scraping/scrape_bangla_news?topic=science-technology`
-    * **Query Parameter:** `topic` (Specify the desired topic)
+    * **Query Parameter:** `News category(topic)` (bangladesh,world,sports,science-technology,lifestyle,exception)
+  
 * **English News:**
     * **Endpoint:** `http://127.0.0.1:5000/scraping/scrape_english_news?topic=business-economy`
-    * **Query Parameter:** `topic` (Specify the desired topic)
+    * **Query Parameter:** `News category(topic)` (business-economy,city,front-page,back-page,entertainment,national,sports)
 
 These endpoints retrieve news articles on a specific topic in the chosen language.

@@ -8,11 +8,8 @@ This readme file provides instructions for setting up, running, and testing a Py
 
 ### Setting Up
 
-1. **Activate a virtual environment:** It's recommended to activate a virtual environment to isolate project dependencies. Refer to documentation for your preferred virtual environment manager for specific instructions.
+1. **Activate a virtual environment:** It's recommended to activate a virtual environment to isolate project dependencies. 
 
-   Here’s a section you can add to your `README` file that explains how to create, activate, and deactivate a virtual environment:
-
----
 
 ## Virtual Environment Setup
 
@@ -71,7 +68,6 @@ This will return your terminal to its normal state, and your system-wide Python 
 
 --- 
 
-Adding this section to your `README` file will guide users through setting up and managing a virtual environment for your project.
 3. **Install dependencies:** After activating your virtual environment, run the following command in your terminal to install the required packages:
 
 ```bash

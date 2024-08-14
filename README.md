@@ -4,7 +4,7 @@ This readme file provides instructions for setting up, running, and testing a Py
 
 ### Prerequisites
 
-* **Python 3.12 or higher:** Ensure you have Python 3.12 or a later version installed. You can verify this by running `python --version` in your terminal.
+* **Python 3.12.4 or higher:** Ensure you have Python 3.12.4 or a later version installed. You can verify this by running `python --version` in your terminal.
 
 ### Setting Up
 

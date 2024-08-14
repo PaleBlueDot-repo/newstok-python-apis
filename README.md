@@ -8,13 +8,70 @@ This readme file provides instructions for setting up, running, and testing a Py
 
 ### Setting Up
 
-1. **Activate a virtual environment:** It's recommended to activate a virtual environment to isolate project dependencies. Refer to documentation for your preferred virtual environment manager for specific instructions.
-2. **Install dependencies:** After activating your virtual environment, run the following command in your terminal to install the required packages:
+1. **Activate a virtual environment:** It's recommended to activate a virtual environment to isolate project dependencies. 
+
+
+## Virtual Environment Setup
+
+Using a virtual environment helps to manage dependencies and keep your project isolated from system-wide packages. Below are the instructions for setting up, activating, and deactivating a virtual environment.
+
+### Creating a Virtual Environment
+
+1. **Navigate to Your Project Directory:**
+   Open your terminal and navigate to the root directory of your project.
+
+2. **Create the Virtual Environment:**
+
+   - On **Windows**:
+     ```bash
+     python -m venv env
+     ```
+   - On **macOS/Linux**:
+     ```bash
+     python3 -m venv env
+     ```
+
+   This will create a directory named `env` in your project directory containing the virtual environment.
+
+### Activating the Virtual Environment
+
+- **Windows**:
+  ```bash
+  .\env\Scripts\activate
+  ```
+- **macOS/Linux**:
+  ```bash
+  source env/bin/activate
+  ```
+
+Once activated, your terminal will show the name of the virtual environment (e.g., `(env)`) before the prompt, indicating that you’re now working inside the virtual environment.
+
+
+
+### Deactivating the Virtual Environment
+
+When you're done working, you can deactivate the virtual environment by running:
+
+```bash
+deactivate
+```
+
+This will return your terminal to its normal state, and your system-wide Python interpreter will be used again.
+
+--- 
+
+3. **Install dependencies:** After activating your virtual environment, run the following command in your terminal to install the required packages:
 
 ```bash
 pip install --user Flask selenium webdriver_manager google google-generative Pillow transformers tensorflow
 ```
+or 
 
+```bash
+pip install -r requirements.txt
+```
+
+This will install all the dependencies listed in the `requirements.txt` file into your virtual environment.
 
 ### Running the Application
 
@@ -79,9 +136,10 @@ The application offers endpoints for scraping news articles:
 
 * **Bangla News:**
     * **Endpoint:** `http://127.0.0.1:5000/scraping/scrape_bangla_news?topic=science-technology`
-    * **Query Parameter:** `topic` (Specify the desired topic)
+    * **Query Parameter:** `News category(topic)` (bangladesh,world,sports,science-technology,lifestyle,exception)
+  
 * **English News:**
     * **Endpoint:** `http://127.0.0.1:5000/scraping/scrape_english_news?topic=business-economy`
-    * **Query Parameter:** `topic` (Specify the desired topic)
+    * **Query Parameter:** `News category(topic)` (business-economy,city,front-page,back-page,entertainment,national,sports)
 
 These endpoints retrieve news articles on a specific topic in the chosen language.

@@ -63,7 +63,7 @@ This will return your terminal to its normal state, and your system-wide Python 
 3. **Install dependencies:** After activating your virtual environment, run the following command in your terminal to install the required packages:
 
 ```bash
-pip install --user Flask selenium webdriver_manager google google-generative Pillow transformers tensorflow
+pip install --user Flask selenium webdriver_manager google google-generativeai Pillow transformers tensorflow
 ```
 or 
 

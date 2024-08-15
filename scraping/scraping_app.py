@@ -10,7 +10,7 @@ def scrape_bangla():
     if not topic:
         return jsonify({'error': 'Topic parameter is required'}), 400
 
-    results = scrape_bangla_news(topic, max_pages_index = 5)
+    results = scrape_bangla_news(topic, max_pages_index = 1)
     return jsonify({'results': results})
 
 @scraping_bp.route('/scrape_english_news', methods=['GET'])

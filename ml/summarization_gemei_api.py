@@ -29,7 +29,7 @@ def process_text(input_text):
               "5. Generate a music prompt based on the text content in english.\n"
               "6. Generate a Image prompt based on the text content in english.\n"
 
-              "Note must follow: If the input text is in Bangla, provide the response in Bangla. If it is in English, give the response in English for summarization."
+              "Note must follow: If the input text is in Bangla, provide the response in Bangla for only summarization. If it is in English, give the response in English for summarization."
               "Give response in a  ||  separated just response do not need to give name of each tasks "
               )
 

@@ -5,8 +5,9 @@ from flask import Blueprint, request, jsonify, request, send_file, jsonify
 from ml.summarization_gemei_api import process_text
 # from ml.fake_news_detect_api import indentify_fake_news
 from ml.generate_image_api import query_huggingface_api
-
-
+import pandas as pd
+from ml.reels_recommendation_api import get_item_based_recommendations
+from sklearn.metrics.pairwise import cosine_similarity
 
 ml_bp = Blueprint('ml_bp', __name__)
 
@@ -48,4 +49,29 @@ def generate_image():
             return jsonify({"error": f"Error processing image: {e}"}), 500
     else:
         return jsonify({"error": "Failed to generate image"}), 500
+
+@ml_bp.route('/recommendReels', methods=['POST'])
+def recommend():
+    data = request.json
+    print(data)
+    user_id = data['user_id']
+    interactions = data['interactions']
+
+    
+    df = pd.DataFrame(interactions)
+
+    user_item_matrix = df.pivot_table(index='user_id', columns='reels_id', values='score').fillna(0)
+
+    item_similarity = cosine_similarity(user_item_matrix.T)
+    item_similarity_df = pd.DataFrame(item_similarity, index=user_item_matrix.columns, columns=user_item_matrix.columns)
+
+ 
+    recommendations = get_item_based_recommendations(user_id, user_item_matrix, item_similarity_df)
+
+    return jsonify({
+        'user_id': user_id,
+        'recommendations': recommendations
+    })
+
+
 

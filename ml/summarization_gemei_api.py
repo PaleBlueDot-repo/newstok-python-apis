@@ -2,7 +2,14 @@ from flask import Flask, request, jsonify
 import google.generativeai as genai
 import json
 
-api_key = "AIzaSyB4PFCcjgHtVQZ1buO86maZjlSGGlvqG8M"
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Retrieve API key from environment variable
+api_key = os.getenv("Gemini_API_KEY")
 genai.configure(api_key=api_key)
 
 generation_config = {

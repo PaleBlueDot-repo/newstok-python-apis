@@ -1,0 +1,8 @@
+Flask
+selenium
+webdriver_manager
+google
+google-generativeai
+Pillow
+transformers
+tensorflow

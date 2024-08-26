@@ -1,15 +1,44 @@
-##  `app.py` - A Multipurpose Python Application
+# A Multipurpose Python Application(Newstok Ml & NewsScraping)
 
 This readme file provides instructions for setting up, running, and testing a Python application with various functionalities.
 
-### Prerequisites
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Setting Up](#setting-up)
+  - [Virtual Environment Setup](#virtual-environment-setup)
+    - [Creating a Virtual Environment](#creating-a-virtual-environment)
+    - [Activating the Virtual Environment](#activating-the-virtual-environment)
+    - [Deactivating the Virtual Environment](#deactivating-the-virtual-environment)
+  - [Installing Dependencies](#installing-dependencies)
+  - [Setting Up Environment Variables](#setting-up-environment-variables)
+- [Running the Application](#running-the-application)
+- [API Testing](#api-testing)
+  - [Text-to-Image Generation](#text-to-image-generation)
+  - [Fake News Classification](#fake-news-classification)
+  - [News Summarization](#news-summarization)
+  - [News Scraping](#news-scraping)
+
+---
+
+## Features
+
+This application provides a variety of functionalities designed to handle different tasks, including machine learning, text processing, and web scraping. Below are the key features:
+
+- **Text-to-Image Generation:** Converts a text prompt into a generated image using advanced machine learning models.
+- **Fake News Classification:** Analyzes and classifies news snippets as real or fake, helping to identify misinformation.
+- **News Summarization:** Summarizes lengthy news articles into concise summaries, making it easier to digest large amounts of information.
+- **News Scraping:** Fetches and processes news articles from various sources, both in Bengali and English, based on specified categories.
+- **Flexible API Endpoints:** Offers multiple endpoints for interacting with the above functionalities, making it easy to integrate into other applications or services.
+
+## Prerequisites
 
 * **Python 3.12.4 or higher:** Ensure you have Python 3.12.4 or a later version installed. You can verify this by running `python --version` in your terminal.
 
-### Setting Up
+## Setting Up
 
-1. **Activate a virtual environment:** It's recommended to activate a virtual environment to isolate project dependencies. 
-
+1. **Activate a virtual environment:** It's recommended to activate a virtual environment to isolate project dependencies.
 
 ## Virtual Environment Setup
 
@@ -46,8 +75,6 @@ Using a virtual environment helps to manage dependencies and keep your project i
 
 Once activated, your terminal will show the name of the virtual environment (e.g., `(env)`) before the prompt, indicating that you’re now working inside the virtual environment.
 
-
-
 ### Deactivating the Virtual Environment
 
 When you're done working, you can deactivate the virtual environment by running:
@@ -58,14 +85,15 @@ deactivate
 
 This will return your terminal to its normal state, and your system-wide Python interpreter will be used again.
 
---- 
+## Installing Dependencies
 
-3. **Install dependencies:** After activating your virtual environment, run the following command in your terminal to install the required packages:
+After activating your virtual environment, run the following command in your terminal to install the required packages:
 
 ```bash
 pip install --user Flask selenium webdriver_manager google google-generativeai Pillow transformers tensorflow
 ```
-or 
+
+or
 
 ```bash
 pip install -r requirements.txt
@@ -73,7 +101,24 @@ pip install -r requirements.txt
 
 This will install all the dependencies listed in the `requirements.txt` file into your virtual environment.
 
-### Running the Application
+## Setting Up Environment Variables
+
+To securely manage API keys and other sensitive information, you'll need to set up environment variables using a `.env` file. 
+
+1. **Create a `.env` file:**
+   - Rename the provided `.env.example` file to `.env`.
+
+2. **Add your API keys:**
+   - Open the `.env` file and fill in the following variables with your corresponding API keys:
+     ```bash
+     AUTH_API_KEY=your_auth_api_key
+     HUGGINGFACE_API_KEY=your_huggingface_api_key
+     GEMINI_API_KEY=your_gemini_api_key
+     ```
+
+These keys are necessary for the application to interact with external APIs.
+
+## Running the Application
 
 1. Navigate to your project directory in the terminal.
 2. Run the application using:
@@ -84,11 +129,11 @@ python app.py
 
 This will start the Flask application.
 
-### API Testing
+## API Testing
 
 The application offers several functionalities accessible through API endpoints:
 
-**1. Text-to-Image Generation:**
+### 1. Text-to-Image Generation
 
 * **Endpoint:** `http://127.0.0.1:5000/ml/generate-image`
 * **Request Method:** POST
@@ -102,7 +147,7 @@ The application offers several functionalities accessible through API endpoints:
 
 This endpoint generates an image based on a provided text prompt.
 
-**2. Fake News Classification:**
+### 2. Fake News Classification
 
 * **Endpoint:** `http://127.0.0.1:5000/ml/classify`
 * **Request Method:** POST
@@ -116,7 +161,7 @@ This endpoint generates an image based on a provided text prompt.
 
 This endpoint classifies a text snippet as real or fake news.
 
-**3. News Summarization:**
+### 3. News Summarization
 
 * **Endpoint:** `http://127.0.0.1:5000/ml/process-data`
 * **Request Method:** POST
@@ -124,13 +169,13 @@ This endpoint classifies a text snippet as real or fake news.
 
 ```json
 {
-    "input_text": "He downplayed. He denied. He dismissed.President Biden’s first television interview since his poor debate performance last week was billed as a prime-time opportunity to reassure the American people that he still has what it takes to run for, win and hold the nation’s highest office.But Mr. Biden, with more than a hint of hoarseness in his voice, spent much of the 22 minutes resisting a range of questions that George Stephanopoulos of ABC News had posed — about his competence, about taking a cognitive test, about his standing in the polls.The president on Friday did not struggle to complete his thoughts the way he did at the debate. But at the same time he was not the smooth-talking senator of his youth, or even the same elder statesman whom the party entrusted four years ago to defeat former President Donald J. Trump.Instead, it was a high-stakes interview with an 81-year-old president whose own party is increasingly doubting him yet who sounded little like a man with any doubts about himself."
+    "input_text": "He downplayed. He denied. He dismissed.President Biden’s first television interview since his poor debate performance last week was billed as a prime-time opportunity to reassure the American people that he still has what it takes to run for, win and hold the nation’s highest office..."
 }
 ```
 
 This endpoint summarizes a provided news article.
 
-**4. News Scraping**
+### 4. News Scraping
 
 The application offers endpoints for scraping news articles:
 

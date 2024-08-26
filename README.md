@@ -27,10 +27,8 @@ This readme file provides instructions for setting up, running, and testing a Py
 This application provides a variety of functionalities designed to handle different tasks, including machine learning, text processing, and web scraping. Below are the key features:
 
 - **Text-to-Image Generation:** Converts a text prompt into a generated image using advanced machine learning models.
-- **Fake News Classification:** Analyzes and classifies news snippets as real or fake, helping to identify misinformation.
 - **News Summarization:** Summarizes lengthy news articles into concise summaries, making it easier to digest large amounts of information.
 - **News Scraping:** Fetches and processes news articles from various sources, both in Bengali and English, based on specified categories.
-- **Flexible API Endpoints:** Offers multiple endpoints for interacting with the above functionalities, making it easy to integrate into other applications or services.
 
 ## Prerequisites
 
@@ -147,21 +145,8 @@ The application offers several functionalities accessible through API endpoints:
 
 This endpoint generates an image based on a provided text prompt.
 
-### 2. Fake News Classification
 
-* **Endpoint:** `http://127.0.0.1:5000/ml/classify`
-* **Request Method:** POST
-* **Body (JSON):**
-
-```json
-{
-  "text": "In 2016, a story circulated that Pope Francis made an unprecedented and shocking endorsement of Donald Trump for president"
-}
-```
-
-This endpoint classifies a text snippet as real or fake news.
-
-### 3. News Summarization
+### 2.News Summarization
 
 * **Endpoint:** `http://127.0.0.1:5000/ml/process-data`
 * **Request Method:** POST
@@ -175,7 +160,7 @@ This endpoint classifies a text snippet as real or fake news.
 
 This endpoint summarizes a provided news article.
 
-### 4. News Scraping
+### 3. News Scraping
 
 The application offers endpoints for scraping news articles:
 

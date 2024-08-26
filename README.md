@@ -18,7 +18,6 @@ This readme file provides instructions for setting up, running, and testing a Py
   - [Text-to-Image Generation](#1-text-to-image-generation)
   - [News Summarization](#2news-summarization)
   - [News Scraping](#3-news-scraping)
-https://github.com/PaleBlueDot-repo/newstok-python-apis#3-news-scraping
 ---
 
 ## Features

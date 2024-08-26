@@ -88,7 +88,7 @@ This will return your terminal to its normal state, and your system-wide Python 
 After activating your virtual environment, run the following command in your terminal to install the required packages:
 
 ```bash
-pip install --user Flask selenium webdriver_manager google google-generativeai Pillow transformers tensorflow
+pip install Flask selenium webdriver_manager google google-generativeai Pillow transformers tensorflow
 ```
 
 or

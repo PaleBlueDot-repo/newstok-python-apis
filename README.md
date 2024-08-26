@@ -15,11 +15,10 @@ This readme file provides instructions for setting up, running, and testing a Py
   - [Setting Up Environment Variables](#setting-up-environment-variables)
 - [Running the Application](#running-the-application)
 - [API Testing](#api-testing)
-  - [Text-to-Image Generation](#text-to-image-generation)
-  - [Fake News Classification](#fake-news-classification)
-  - [News Summarization](#news-summarization)
-  - [News Scraping](#news-scraping)
-
+  - [Text-to-Image Generation](#1-text-to-image-generation)
+  - [News Summarization](#2news-summarization)
+  - [News Scraping](#3-news-scraping)
+https://github.com/PaleBlueDot-repo/newstok-python-apis#3-news-scraping
 ---
 
 ## Features

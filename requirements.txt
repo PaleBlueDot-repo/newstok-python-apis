@@ -4,5 +4,7 @@ webdriver_manager
 google
 google-generativeai
 Pillow
-transformers
-tensorflow
+requests
+ipython
+pandas
+scikit-learn

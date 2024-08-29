@@ -8,6 +8,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from ml.summarization_gemei_api import process_text
 from ml.generate_image_api import query_huggingface_api
 from ml.reels_recommendation_api import get_item_based_recommendations
+from ml.Reels_music_api import audio_to_base64 ,query,limit_base64_string
+
 from dotenv import load_dotenv
 import os
 
@@ -17,9 +19,6 @@ ml_bp = Blueprint('ml_bp', __name__)
 load_dotenv()
 api_key_auth = os.getenv("AUTH_API_KEY")
 
-
-# Sample list of valid API keys for simplicity
-# In production, consider storing these in a secure environment or database
 VALID_API_KEYS = {api_key_auth}
 
 def require_api_key(f):
@@ -80,4 +79,25 @@ def recommend():
     return jsonify({
         'user_id': user_id,
         'recommendations': recommendations
+    })
+
+
+@ml_bp.route('/generate-music', methods=['POST'])
+@require_api_key
+def generateMusic():
+    data = request.json
+    print(data)
+    text = data['text']
+   
+    audio_bytes = query({
+           "inputs": text,
+     })
+
+    audio_base64 = audio_to_base64(audio_bytes)
+
+    audio_base64_limited = limit_base64_string(audio_base64, 600)
+
+
+    return jsonify({
+        'music': audio_base64_limited
     })

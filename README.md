@@ -129,45 +129,70 @@ This will start the Flask application.
 
 The application offers several functionalities accessible through API endpoints:
 
+
 ### 1. Text-to-Image Generation
+- **Endpoint:** `http://127.0.0.1:5000/ml/generate-image`
+- **Request Method:** POST
+- **Headers:** 
+  - `x-api-key: your_api_key`
+- **Body (JSON):**
+  ```json
+  {
+    "prompt": "a man walking in the fire animated"
+  }
+  ```
 
-* **Endpoint:** `http://127.0.0.1:5000/ml/generate-image`
-* **Request Method:** POST
-* **Body (JSON):**
-
-```json
-{
-  "prompt": "a man walking in the fire animated"
-}
-```
-
-This endpoint generates an image based on a provided text prompt.
-
-
-### 2.News Summarization
-
-* **Endpoint:** `http://127.0.0.1:5000/ml/process-data`
-* **Request Method:** POST
-* **Body (JSON):**
-
-```json
-{
+### 2. News Summarization
+- **Endpoint:** `http://127.0.0.1:5000/ml/process-data`
+- **Request Method:** POST
+- **Headers:** 
+  - `x-api-key: your_api_key`
+- **Body (JSON):**
+  ```json
+  {
     "input_text": "He downplayed. He denied. He dismissed.President Biden’s first television interview since his poor debate performance last week was billed as a prime-time opportunity to reassure the American people that he still has what it takes to run for, win and hold the nation’s highest office..."
-}
-```
-
-This endpoint summarizes a provided news article.
+  }
+  ```
 
 ### 3. News Scraping
+- **Bangla News:**
+  - **Endpoint:** `http://127.0.0.1:5000/scraping/scrape_bangla_news?topic=science-technology`
+  - **Request Method:** GET
+  - **Headers:** 
+    - `x-api-key: your_api_key`
 
-The application offers endpoints for scraping news articles:
+- **English News:**
+  - **Endpoint:** `http://127.0.0.1:5000/scraping/scrape_english_news?topic=business-economy`
+  - **Request Method:** GET
+  - **Headers:** 
+    - `x-api-key: your_api_key`
 
-* **Bangla News:**
-    * **Endpoint:** `http://127.0.0.1:5000/scraping/scrape_bangla_news?topic=science-technology`
-    * **Query Parameter:** `News category(topic)` (bangladesh,world,sports,science-technology,lifestyle,exception)
-  
-* **English News:**
-    * **Endpoint:** `http://127.0.0.1:5000/scraping/scrape_english_news?topic=business-economy`
-    * **Query Parameter:** `News category(topic)` (business-economy,city,front-page,back-page,entertainment,national,sports)
+### 4. Music Generation
+- **Endpoint:** `http://127.0.0.1:5000/ml/generate-music`
+- **Request Method:** POST
+- **Headers:** 
+  - `x-api-key: your_api_key`
+- **Body (JSON):**
+  ```json
+  {
+    "text": "your text prompt here"
+  }
+  ```
 
-These endpoints retrieve news articles on a specific topic in the chosen language.
+### 5. Recommendations for News Reels
+- **Endpoint:** `http://127.0.0.1:5000/recommendReels`
+- **Request Method:** POST
+- **Headers:** 
+  - `x-api-key: your_api_key`
+- **Body (JSON):**
+  ```json
+  {
+    "user_id": "user123",
+    "interactions": [
+      {"user_id": "user123", "reels_id": "reel1", "score": 5},
+      {"user_id": "user123", "reels_id": "reel2", "score": 3}
+    ]
+  }
+  ```
+
+Ensure to replace `your_api_key` with the actual API key for each request.

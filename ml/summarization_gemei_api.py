@@ -54,14 +54,34 @@ def process_text(input_text):
     parts=split_on_delimiters(Text)
 
 
+    default_summary = "Default summary content."
+    default_font_color = "#000000"  # Black
+    default_background_color = "#FFFFFF"  # White
+    default_font_family = "Arial"
+    default_music_prompt = "Compose a short music track that complements a breaking news story."
+    default_image_prompt = "Generate a striking image that captures the essence of the news story."
+    
     res = {
-        "summary": parts[0],
-        "font_color": parts[1],
-        "background_color": parts[2],
-        "font_family": parts[3],
-        "music_prompt": parts[4],
-        "image_prompt": parts[5]
+        "summary": default_summary,
+        "font_color": default_font_color,
+        "background_color": default_background_color,
+        "font_family": default_font_family,
+        "music_prompt": default_music_prompt,
+        "image_prompt": default_image_prompt
     }
+    
+    if len(parts) > 0:
+        res["summary"] = parts[0]
+    if len(parts) > 1:
+        res["font_color"] = parts[1]
+    if len(parts) > 2:
+        res["background_color"] = parts[2]
+    if len(parts) > 3:
+        res["font_family"] = parts[3]
+    if len(parts) > 4:
+        res["music_prompt"] = parts[4]
+    if len(parts) > 5:
+        res["image_prompt"] = parts[5]
 
     print(res)
 

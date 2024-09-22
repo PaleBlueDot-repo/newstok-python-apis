@@ -9,7 +9,7 @@ from ml.summarization_gemei_api import process_text
 from ml.generate_image_api import query_huggingface_api
 from ml.reels_recommendation_api import get_item_based_recommendations
 from ml.Reels_music_api import audio_to_base64 ,query,limit_base64_string
-
+from ml.summarization_gemei_api import  process_single_call
 from dotenv import load_dotenv
 import os
 
@@ -101,3 +101,15 @@ def generateMusic():
     return jsonify({
         'music': audio_base64_limited
     })
+
+
+@ml_bp.route('/process-single-data', methods=['POST'])
+@require_api_key
+def process_single_text():
+    data = request.get_json()
+    input_text = data.get('input_text', '')
+    if not input_text:
+        return jsonify({"error": "No input_text provided"}), 400
+
+    result = process_single_call(input_text)
+    return jsonify(json.loads(result))

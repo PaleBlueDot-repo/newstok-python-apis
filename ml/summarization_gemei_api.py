@@ -42,7 +42,7 @@ def process_text(input_text):
               "4. Provide a font family based on the text context \n"
               "5. Generate a music prompt based on the text content in english 20 words\n"
               "6. Generate a Image prompt based on the text content in english  20 words\n"
-              "Give each task responses || separted no numbering"
+              "Give each task responses || separted no numbering .remember provide  no extra word just task "
               )
 
     # Start a chat session
@@ -61,6 +61,26 @@ def process_text(input_text):
         "font_family": parts[3],
         "music_prompt": parts[4],
         "image_prompt": parts[5]
+    }
+
+    print(res)
+
+    res_json = json.dumps(res, ensure_ascii=False, indent=4)
+    return res_json
+
+
+def process_single_call(input_text):
+    prompt = (input_text)
+
+    # Start a chat session
+    chat_session = model.start_chat(history=[])
+    response = chat_session.send_message(prompt)
+    Text = response.text
+    print(Text)
+    
+
+    res = {
+        "text": Text,
     }
 
     print(res)
